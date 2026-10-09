@@ -13,10 +13,10 @@ public class Task1_EdgeDriver {
 		
 		d.get("https://practicetestautomation.com/practice-test-login/");
 		
-		d.findElement(By.id("username")).sendKeys("Stud");
-		Thread.sleep(1000);
+		d.findElement(By.id("username")).sendKeys("stud");
+		//Thread.sleep(1000);
 		d.findElement(By.id("password")).sendKeys("Password123");
-		Thread.sleep(1000);
+		//Thread.sleep(1000);
 		d.findElement(By.id("submit")).click();
 		
 		WebElement errorMessage = d.findElement(By.id("error"));

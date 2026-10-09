@@ -23,7 +23,7 @@ public class Task1_ChormeDriver {
 		driver.findElement(By.id("submit")).click();
 		
 		
-		System.out.println("URL after login"+driver.getCurrentUrl());
+		System.out.println("URL after login: "+driver.getCurrentUrl());
 		
 		WebElement greet_text = driver.findElement(By.tagName("strong"));
 		
