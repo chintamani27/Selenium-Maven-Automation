@@ -3,6 +3,7 @@ package Test.Selenium_automation;
 import java.util.Iterator;
 import java.util.List;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
@@ -121,8 +122,11 @@ public class Xpath_BlogSpot {
 		d.findElement(By.xpath("//button[text()='Upload Single File']")).click();
 		d.findElement(By.xpath("//button[text()='Upload Multiple Files']")).click();
 		
+		//handling alert
 		d.findElement(By.xpath("//button[@id='alertBtn']")).click();
-		d.switchTo().alert().accept();
+		Alert al = d.switchTo().alert();
+		al.accept();
+		//or this way => //d.switchTo().alert().accept();
 		
 		WebElement staticTable = d.findElement(By.xpath("//table[@name='BookTable']"));
 		System.out.println(staticTable.getText());

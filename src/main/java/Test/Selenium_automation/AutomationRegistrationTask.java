@@ -45,6 +45,7 @@ public class AutomationRegistrationTask {
 		d.findElement(By.id("msdd")).click();
 		
 		d.findElement(By.xpath("//a[normalize-space()='English']")).click();
+		d.findElement(By.xpath("//a[text()='Catalan']")).click();
 		Thread.sleep(1000);
 		
 		//ACCESSING DROPDOWN
@@ -79,19 +80,26 @@ public class AutomationRegistrationTask {
 		//ACCESSING CONFIRM PASSWORD FIELD
 		d.findElement(By.xpath("//input[@id='secondpassword']")).sendKeys("Pass123");
 		
-		//ACCESING SUBMIT BUTTON
+		//Accessing choose photo field
+		d.findElement(By.id("imagesrc")).sendKeys("C:\\Users\\chint\\OneDrive\\Pictures\\Screenshots 1\\Screenshot 2026-10-11 152722.png");
 		
+		//ACCESING SUBMIT BUTTON
+		Thread.sleep(2000);
 		d.findElement(By.xpath("//button[@id='submitbtn']")).click();
 		
+		//ACCESSING REFRESH BUTTON
+		Thread.sleep(2000);
+		d.findElement(By.id("Button1")).click();
 		
 		
 		
 		
 		
+		//task => switchto 
 		
 		
 		Thread.sleep(5000);
-		d.close();
+		//d.close();
 	}
 
 }
