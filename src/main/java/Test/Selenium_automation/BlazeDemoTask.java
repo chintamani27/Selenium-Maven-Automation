@@ -6,9 +6,11 @@ import java.io.File;
 import java.io.IOException;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
 import com.google.common.io.Files;
@@ -20,14 +22,18 @@ public class BlazeDemoTask {
 		
 		d.manage().window().maximize();
 		
+		Actions act = new Actions(d);
+		
 		//get url
 		d.get("https://blazedemo.com/purchase.php");
 		
 		//name field
-		d.findElement(By.id("inputName")).sendKeys("Chintamani");
-		
+		WebElement name = d.findElement(By.id("inputName"));
+		act.click(name).sendKeys("Chintamani").perform();
+		System.out.println(d.getCurrentUrl());
 		//address field
-		d.findElement(By.xpath("//input[@id='address']")).sendKeys("MG Road, Shivajinagar");
+		WebElement address = d.findElement(By.id("address"));
+		act.click(address).sendKeys("MG Road, Shivajinagar").perform();	
 		
 		//city field
 		d.findElement(By.cssSelector("input[id='city']")).sendKeys("Pune");
@@ -74,8 +80,28 @@ public class BlazeDemoTask {
 		Files.copy(src, Dest);
 		
 		
+		d.findElement(By.linkText("home")).click();
+		
+		WebElement register = d.findElement(By.linkText("Register"));
+		act.click(register).perform();
+		
+		WebElement Reg_name = d.findElement(By.id("name"));
+		act.click(Reg_name).sendKeys("Chintamani").perform();
+		
+		WebElement company = d.findElement(By.id("company"));
+		act.click(company).sendKeys("Accenture").perform();
+		
+		act.click(d.findElement(By.id("email"))).sendKeys("chintamani@gmail.com").perform();
+		
+		act.click(d.findElement(By.id("password"))).click().sendKeys("PAss2123").perform();
+		
+		//act.click(address.findElement(By.id("password-confirm"))).sendKeys("PAss2123").perform();
+		d.findElement(By.id("password-confirm")).sendKeys("PAss2123");
+		
+		act.click().sendKeys(Keys.ENTER).perform();
+		
 		Thread.sleep(5000);
-		d.close();
+		//d.close();
 		
 		
 
