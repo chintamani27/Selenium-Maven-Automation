@@ -3,12 +3,13 @@ package Test.Selenium_automation;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.WindowType;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.interactions.Actions;
 
 public class KeyboardInteraction {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		EdgeDriver d = new EdgeDriver();
 		d.manage().window().maximize();
 		
@@ -44,6 +45,25 @@ public class KeyboardInteraction {
 		act.moveToElement(pointmeButton).perform();
 		String h = pointmeButton.getText();
 		System.out.println(h);
+		
+		//double click
+		WebElement dClick = d.findElement(By.xpath("//button[text()='Copy Text']"));
+		System.out.println("Is button displays :"+dClick.isDisplayed());
+		act.doubleClick(dClick).perform();
+		
+		
+		d.findElement(By.xpath("//button[text()='New Tab']")).click();
+		Thread.sleep(3000);
+		
+		Actions act1= new Actions(d);
+		act1.keyDown(Keys.CONTROL)
+		   .sendKeys("w")
+		   .keyUp(Keys.CONTROL)
+		   .perform();
+		
+		
+		
+		
 		
 		
 		
