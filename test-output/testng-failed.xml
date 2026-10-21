@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Test.Selenium_automation.DemoWithTestNG">
+      <class name="swaglablogintest">
         <methods>
-          <include name="enterCredentials"/>
+          <include name="verifylogin"/>
         </methods>
-      </class> <!-- Test.Selenium_automation.DemoWithTestNG -->
+      </class> <!-- swaglablogintest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
