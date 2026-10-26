@@ -1,4 +1,4 @@
-package Test.Selenium_automation;
+package Selenium_automation;
 
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;

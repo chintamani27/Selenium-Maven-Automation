@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="swaglablogintest">
+      <class name="Selenium_automation.Listner_Execute">
         <methods>
-          <include name="verifylogin"/>
+          <include name="verifyURL"/>
         </methods>
-      </class> <!-- swaglablogintest -->
+      </class> <!-- Selenium_automation.Listner_Execute -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

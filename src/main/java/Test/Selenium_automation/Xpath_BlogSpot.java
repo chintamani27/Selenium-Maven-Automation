@@ -19,6 +19,9 @@ public class Xpath_BlogSpot {
 		
 		d.get("https://testautomationpractice.blogspot.com/");
 		
+		
+		
+		
 		d.findElement(By.xpath("//input[@id='name']")).sendKeys("Chintamani");
 		
 		
@@ -92,7 +95,16 @@ public class Xpath_BlogSpot {
 		
 		//accessing date2 field
 		d.findElement(By.id("txtDate")).click();
-		d.findElement(By.xpath("//td[@data-month='9' and @data-year='2026'] //a[@data-date='8']")).click();
+		Select month = new Select(d.findElement(By.xpath("//select[@aria-label='Select month']")));
+		month.selectByVisibleText("Jun");
+		
+		Select year = new Select(d.findElement(By.xpath("//select[@aria-label='Select year']")));
+		year.selectByVisibleText("2023");
+		
+		d.findElement(By.xpath("//a[@data-date='13']")).click();
+		
+//		d.findElement(By.id("txtDate")).click();
+//		d.findElement(By.xpath("//td[@data-month='9' and @data-year='2026'] //a[@data-date='8']")).click();
 		
 		//accessing date 3 picker field
 		d.findElement(By.id("start-date")).sendKeys("10-02-2023");

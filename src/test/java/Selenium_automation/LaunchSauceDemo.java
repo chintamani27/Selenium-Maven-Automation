@@ -1,4 +1,4 @@
-package Test.Selenium_automation;
+package Selenium_automation;
 
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.BeforeMethod;
