@@ -6,7 +6,7 @@ import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features="CucumberFeatures/opencart.feature" , glue= {"stepDefinations"})
+@CucumberOptions(features="CucumberFeatures/swaglab.feature" , glue= {"stepDefinations"})
 public class Runner {
 
 }
